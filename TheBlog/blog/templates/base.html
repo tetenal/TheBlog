@@ -1,0 +1,36 @@
+{% load static %}
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<title>{% block title %}Blog{% endblock %}</title>
+    <!-- <meta http-equiv="refresh" content="2">  -->
+    <link rel="stylesheet" type="text/css" href="{% static "assets/css/default.css" %}" >
+
+</head>
+
+<body>
+    <div id="sidebar"> {% block sidebar %} {% endblock %} </div>
+    <div id="container">
+        <div id="menu">
+            {% block nav-global %}
+
+                <!-- MENU -->
+                <a href="/home"><h3>MyBlog</h3></a>
+                <a href="/admin/">Admin</a>
+                     <a href="/admin/blog/post/add/">Add post</a>
+
+            {% endblock %}
+        </div>
+
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+</body>
+</html>
+
