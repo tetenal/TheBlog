@@ -2,7 +2,7 @@
 from django.shortcuts import redirect, render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.core.context_processors import csrf
-# from django.core.paginator import Paginator, InvalidPage, EmptyPage
+from django.core.paginator import Paginator, InvalidPage, EmptyPage
 
 from TheBlog.blog.models import *
 from models import Post
@@ -23,6 +23,14 @@ def post(request, pk):
 
 def main(request):
 
-  posts = Post.objects.all()
+	posts = Post.objects.all()
+	paginator = Paginator(posts, 5)
 
-  return render_to_response('blog_list.html', {'posts': posts})
+	try: page = int(request.GET.get("page", '1'))
+	except ValueError: page = 1
+
+	try: posts = paginator.page(page)
+	except (InvalidPage, EmptyPage) :
+		posts = paginator.page(paginator.num_pages) 
+
+	return render_to_response('blog_list.html', {'posts': posts})

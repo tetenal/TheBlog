@@ -1,3 +1,8 @@
+* {
+            background-color: #96dfd0;
+            color: #555;
+            /*font-size: 0.95em;*/
+}
 #menu a {
             text-decoration: none;
             background: #eee;
@@ -17,6 +22,33 @@ a:hover {
             color: #555;
 }
 
-#container { margin: auto; width: 800px; border: 0px solid; }
-        /*p { font-size: 1.1em; }*/
+#container { 
+      margin: 10px; 
+      width: 1000px; 
+      border: 0px solid;
+}
+#content {
+      float:left;
+      width: 1000px;
+      border: 0px solid;
+}
 h3 { margin-right: 30px; display: inline; }
+#advert {
+      background-color:black; 
+      font-color:white;
+      float:right; 
+      margin-left:5px; 
+      border:1px solid; 
+      height:500px; 
+      width:200px; 
+}
+#bottomadvert {
+      background-color:black; 
+      font-color:white; 
+      border:1px solid; 
+      margin-left:10px; 
+      margin-top: 50px; 
+      width:800px; 
+      height:100px; 
+      float:left;
+}
