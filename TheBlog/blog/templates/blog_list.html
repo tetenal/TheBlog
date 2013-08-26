@@ -15,12 +15,12 @@
 	                <a href="{% url 'blog.views.post' post.id %}">Comments</a>
 	            </div>
 	        </ul>
-
+<hr/>
 		{% endfor %}
 	</div>
 	<!-- Next/Prev page links  -->
     {% if posts.paginator.num_pages > 1 %}
-    <div class="pagination" style="margin-top: 20px; margin-left: -20px; ">
+    <div class="pagination" style="margin-top: 20px;">
         <span class="step-links">
             {% if posts.has_previous %}
                 <a href= "?page={{ posts.previous_page_number }}">newer entries &lt;&lt; </a>

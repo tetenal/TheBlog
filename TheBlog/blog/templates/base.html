@@ -12,11 +12,14 @@
 
 </head>
 
-<body>
+<body background="{% static "assets/images/blog-site.jpg" %}" >
+
     <!-- <div id="sidebar"> {% block sidebar %} {% endblock %} </div> -->
     <div id="container">
         <div id="menu">
             {% block nav-global %}
+
+            <!-- should place an if here to only allow admins to see -->
 
                 <!-- MENU -->
                 <h3>MyBlog</h3>
@@ -31,6 +34,7 @@
             {% block content %}{% endblock %}
         </div>
     </div>
+    <!-- still working on how to display these ads using affiliate programs -->
     <div id="advert">
         This is where the ad will go.
     </div>

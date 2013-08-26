@@ -1,38 +1,50 @@
 * {
-            background-color: #96dfd0;
-            color: #555;
-            /*font-size: 0.95em;*/
+      /*background-color: #96dfd0;*/
+      /*color: #092224;*/
+      /*font-size: 0.95em;*/
 }
 #menu a {
-            text-decoration: none;
-            background: #eee;
-            border-top: 1px solid #ccc;
-            border-bottom: 1px solid #ccc;
-            border-right: 2px solid #fff;
-            padding-right: 3px;
-            padding-left: 3px;
-            color: #777;
-            /*font-size: 0.9em;*/
+      text-decoration: none;
+      background: #eee;
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      border-right: 2px solid #fff;
+      padding-right: 3px;
+      padding-left: 3px;
+      color: #777;
+      /*font-size: 0.9em;*/
 }
-
+a {
+      color: Aqua;
+}
 a:hover {
-            background: #eeebeb;
-            border-top: 1px solid #aaa;
-            border-bottom: 1px solid #aaa;
-            color: #555;
+      background: #eeebeb;
+      border-top: 1px solid #aaa;
+      border-bottom: 1px solid #aaa;
+      color: #555;
+}
+a:visited {
+      color: Yellow;
 }
 
 #container { 
-      margin: 10px; 
-      width: 1000px; 
-      border: 0px solid;
+      margin-left: 200px; 
+      margin-right: 100px;
+      width: 800px; 
+      border: 1px solid;
 }
 #content {
       float:left;
       width: 1000px;
-      border: 0px solid;
+      border: 1px solid;
 }
-h3 { margin-right: 30px; display: inline; }
+.current {
+      /*margin-left: 10px;*/
+}
+h3 { 
+      margin-right: 30px; 
+      display: inline; 
+}
 #advert {
       background-color:black; 
       font-color:white;
@@ -48,7 +60,14 @@ h3 { margin-right: 30px; display: inline; }
       border:1px solid; 
       margin-left:10px; 
       margin-top: 50px; 
+      margin-bottom: 10px;
       width:800px; 
       height:100px; 
       float:left;
+}
+.pagination {
+      margin-left: 10px;
+}
+.step-links {
+      /*margin-left: 10px;*/
 }
