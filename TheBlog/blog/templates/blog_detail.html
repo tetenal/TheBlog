@@ -10,13 +10,16 @@
     </ul>
     <hr/>
 
+    <h2>Comments</h2>
     {% if post.comment_set.all %}
-	    <h2>Comments</h2>
-	    <div class="comments">
-	    	{% for comment in post.comment_set.all %}
-	    		<div class="title">{{ comment.author }} {{ comment.create }}</div>
-	    		<div class="body">{{ comment.body }}</div>
-	    	{% endfor %}
+	    
+	<div class="comments">
+    	{% for comment in post.comment_set.all %}
+    		<div class="title">{{ comment.author }} {{ comment.create }}</div>
+    		<div class="body">&nbsp&nbsp&nbsp&nbsp{{ comment.body }}</div>
+    		<hr/>
+    	{% endfor %}
+    </div>
 	{% endif %}
 	<form action="" method="POST">
 	<h2>Add Comments</h2>

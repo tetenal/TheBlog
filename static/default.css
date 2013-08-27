@@ -28,19 +28,22 @@ body {
 }
 #center {
    padding: 10px 20px;
-   width: 100%;
+   width: 90%;
    border: 1px solid;
+   /*background-color: #8585AD; //debugging color*/
 }
 #left {
    width: 180px;          
    padding: 0 10px;
    right: 240px;          
-   margin-left: -100%;
+   margin-left: -90%;
+   /*background-color: #6699FF; //debugging color*/
 }
 #right {
    width: 130px; 
    padding: 0 10px;         
    margin-right: -192px;  
+   /*background-color: #999966; //debugging color*/
 }
 #footer {
    clear: both;
