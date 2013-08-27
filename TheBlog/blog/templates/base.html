@@ -15,32 +15,32 @@
 <body background="{% static "assets/images/blog-site.jpg" %}" >
 
     <!-- <div id="sidebar"> {% block sidebar %} {% endblock %} </div> -->
-    <div id="container">
-        <div id="menu">
+    <div id="header"></div>
+        <div id="container">
             {% block nav-global %}
 
             <!-- should place an if here to only allow admins to see -->
-
+            <div id="menu">
                 <!-- MENU -->
                 <h3>MyBlog</h3>
                 <a href="/home">Home</a>
                 <a href="/admin/">Admin</a>
                 <a href="/admin/blog/post/add/">Add post</a>
-
-            {% endblock %}
+            </div>
+            <div id="center" class="column">
+                {% block content %}{% endblock %}
+            </div>
+            <div id="left" class="column">
+                Here is some content to read in this left section
+            </div>
+            <div id="right" class="column">
+                Here is some content to read in this right section
+            </div>
         </div>
-
-        <div id="content">
-            {% block content %}{% endblock %}
+        <div id="footer">
+            Here is another spot for an ad
         </div>
-    </div>
-    <!-- still working on how to display these ads using affiliate programs -->
-    <div id="advert">
-        This is where the ad will go.
-    </div>
-    <div id="bottomadvert">
-        Here is another spot for an ad
-    </div>
+        {% endblock %}
 
 </body>
 </html>
