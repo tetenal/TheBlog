@@ -13,13 +13,23 @@
     <h2>Comments</h2>
     {% if post.comment_set.all %}
 	    
-	<div class="comments">
-    	{% for comment in post.comment_set.all %}
-    		<div class="title">{{ comment.author }} {{ comment.create }}</div>
-    		<div class="body">&nbsp&nbsp&nbsp&nbsp{{ comment.body }}</div>
-    		<hr/>
-    	{% endfor %}
-    </div>
+	<form action="{% url 'blog.views.delete_comment' post.pk %}" method="POST">{% csrf_token %}
+        <div class="comments">
+        	{% for comment in post.comment_set.all %}
+        		<div class="title">{{ comment.author }} {{ comment.create }}</div>
+        		<div class="body">&nbsp&nbsp&nbsp&nbsp{{ comment.body }}</div>
+                {% if user.is_staff %}
+                    <input type="checkbox" name="delete" value="{{ comment.pk }}">
+                    <a href="{% url 'blog.views.delete_comment' post.pk comment.id %}">delete</a>
+                {% endif %}
+        		<hr/>
+        	{% endfor %}
+        </div>
+        {% if user.is_staff %}
+            <p><input type="submit" value="Delete all selected"></p>
+            <br />
+        {% endif %}
+    </form>
 	{% endif %}
 	<form action="" method="POST">
 	<h2>Add Comments</h2>
@@ -29,5 +39,6 @@
 		</table>
 		<input type="submit" name="submit" value="Submit" />
 	</form>
+
 
 {% endblock %}

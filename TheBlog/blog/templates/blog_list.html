@@ -1,6 +1,17 @@
 {% extends 'base.html' %}
 
 {% block title%}View Posts - {% endblock %}
+{% block left %}
+    Monthly Archive
+    <p>
+    {% for month in months %}
+        {% ifchanged month.0 %} {{ month.0 }} <br/> {% endifchanged %}
+        <a href="{% url 'blog.views.month' month.0 month.1 %}">{{ month.2 }}</a>
+        <br/>
+    {% endfor %}
+    </p>
+{% endblock %}
+
 {% block content %}
 
 	<div class="main">
@@ -16,7 +27,7 @@
 		{% endfor %}
 	</div>
 	<!-- Next/Prev page links  -->
-    {% if posts.paginator.num_pages > 1 %}
+    {% if not archive and posts.paginator.num_pages > 1 %}
     <div class="pagination" >
         <span class="step-links">
             {% if posts.has_previous %}

@@ -24,21 +24,27 @@
                 <!-- MENU -->
                 <h3>MyBlog</h3>
                 <a href="/home">Home</a>
-                <a href="/admin/">Admin</a>
-                <a href="/admin/blog/post/add/">Add post</a>
+                {% if user.is_staff %}
+                    <a href="/admin/">Admin</a>
+                    <a href="/admin/blog/post/add/">Add post</a>
+                {% endif %}
             </div>
             <div id="center" class="column">
                 {% block content %}{% endblock %}
             </div>
             <div id="left" class="column">
-                Here is some content to read in this left section
+                {% block left %} {% endblock %}
             </div>
             <div id="right" class="column">
                 Here is some content to read in this right section
             </div>
         </div>
         <div id="footer">
-            Here is another spot for an ad
+            <ul>
+                <li>About</li>
+                <li>Contact</li>
+                <li>Facebook</li>
+            </ul>
         </div>
         {% endblock %}
 

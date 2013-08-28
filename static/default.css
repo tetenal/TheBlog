@@ -19,6 +19,7 @@ body {
    padding-left: 200px;   
    padding-right: 190px;  
    overflow: hidden;
+   min-height: 400px;
 }
 #container .column {
    position: relative;
@@ -49,6 +50,7 @@ body {
    clear: both;
    position: relative;
    height: 50px;
+   border-top: 1px solid;
 }
 #menu {
    width: 100%;
